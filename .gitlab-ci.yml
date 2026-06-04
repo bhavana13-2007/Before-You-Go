@@ -1,0 +1,33 @@
+stages:
+  - lint
+  - test
+  - audit
+
+lint_job:
+  stage: lint
+  image: python:3.9
+  script:
+    - pip install ruff
+    - ruff check .
+    - ruff format . 
+
+type_check_job:
+  stage: test
+  image: python:3.9
+  script:
+    - pip install mypy
+    - mypy .
+
+test_coverage_job:
+  stage: test
+  image: python:3.9
+  script:
+    - pip install pytest pytest-cov
+    - pytest --cov=.
+
+dependency_audit_job:
+  stage: audit
+  image: python:3.9
+  script:
+    - pip install pip-audit
+    - pip-audit -r requirements.txt

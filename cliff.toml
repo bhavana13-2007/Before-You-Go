@@ -1,0 +1,7 @@
+[changelog]
+header = "# Changelog\n\n"
+body = """
+{% for commit in commits %}\
+  * {{ commit.message }}\
+{% endfor %}\n
+"""

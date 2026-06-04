@@ -1,0 +1,6 @@
+[allowlist]
+description = "Allowlist for project"
+files = [
+    '.gitleaks.toml',
+    'requirements.txt'
+]

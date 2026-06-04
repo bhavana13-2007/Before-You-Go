@@ -1,0 +1,8 @@
+flask
+pandas
+gunicorn
+ruff
+mypy
+pip-audit
+pytest
+pytest-cov
